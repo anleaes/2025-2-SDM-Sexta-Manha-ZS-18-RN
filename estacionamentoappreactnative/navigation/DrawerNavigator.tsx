@@ -20,6 +20,7 @@ import CreateTarifaScreen from '@/screens/CreateTarifasScreen';
 import EditTarifaScreen from '@/screens/EditTarifasScreen';
 
 import VeiculosScreen, { Veiculo } from '@/screens/VeiculosScreen';
+import CreateVeiculoScreen from '@/screens/CreateVeiculoScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -143,6 +144,11 @@ const DrawerNavigator = () => {
         <Ionicons name="car-outline" size={size} color={color} />,
         title: 'Veículos',
     }}
+    />
+    <Drawer.Screen
+        name="CreateVeiculo"
+        component={CreateVeiculoScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Veículo' }}
         
         //adicionar drawer.screens aqui!!!
       />
