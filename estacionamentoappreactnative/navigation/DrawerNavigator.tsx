@@ -13,6 +13,7 @@ import EditClienteScreen from '@/screens/EditClientesScreen';
 import FuncionariosScreen from '@/screens/FuncionariosScreen';
 import { Funcionario } from '@/screens/FuncionariosScreen';
 import CreateFuncionarioScreen from '@/screens/CreateFuncionariosScreen';
+import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -57,7 +58,7 @@ const DrawerNavigator = () => {
 
         //adicionar drawer.screens aqui!!!
 
-        />
+    />
     <Drawer.Screen
         name="Clientes"
         component={ClientesScreen}
@@ -65,7 +66,7 @@ const DrawerNavigator = () => {
             drawerIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color}  />,
             title: 'Clientes',
         }}
-        />
+    />
     <Drawer.Screen
         name="CreateCliente"
         component={CreateClienteScreen}
@@ -75,7 +76,9 @@ const DrawerNavigator = () => {
         name="EditCliente"
         component={EditClienteScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar cliente' }}
-/> 
+    /> 
+    
+
     <Drawer.Screen
        name="Funcionarios"
        component={FuncionariosScreen}
@@ -85,14 +88,17 @@ const DrawerNavigator = () => {
     ),
     title: 'Funcionários',
   }}
-
-  />
+    />
     <Drawer.Screen
         name="CreateFuncionario"
         component={CreateFuncionarioScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Funcionário' }}
-
-
+    />
+    <Drawer.Screen
+        name="EditFuncionario"
+        component={EditFuncionarioScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Funcionário' }}
+  
 
 
         
