@@ -11,6 +11,8 @@ import CreateClienteScreen from '@/screens/CreateClientesScreen';
 import EditClienteScreen from '@/screens/EditClientesScreen';
 
 import FuncionariosScreen from '@/screens/FuncionariosScreen';
+import { Funcionario } from '@/screens/FuncionariosScreen';
+import CreateFuncionarioScreen from '@/screens/CreateFuncionariosScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -83,6 +85,12 @@ const DrawerNavigator = () => {
     ),
     title: 'Funcionários',
   }}
+
+  />
+    <Drawer.Screen
+        name="CreateFuncionario"
+        component={CreateFuncionarioScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Funcionário' }}
 
 
 
