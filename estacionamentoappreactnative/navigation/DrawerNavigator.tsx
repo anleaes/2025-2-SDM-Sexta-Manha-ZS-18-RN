@@ -13,14 +13,14 @@ import EditClienteScreen from '@/screens/EditClientesScreen';
 import FuncionariosScreen from '@/screens/FuncionariosScreen';
 import { Funcionario } from '@/screens/FuncionariosScreen';
 import CreateFuncionarioScreen from '@/screens/CreateFuncionariosScreen';
-import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
+import EditFuncionarioScreen from '@/screens/EditFuncionariosScreen';
 
 import TarifaScreen, { Tarifa } from '@/screens/TarifasScreen';
 import CreateTarifaScreen from '@/screens/CreateTarifasScreen';
 import EditTarifaScreen from '@/screens/EditTarifasScreen';
 
 import VeiculosScreen, { Veiculo } from '@/screens/VeiculosScreen';
-import CreateVeiculoScreen from '@/screens/CreateVeiculoScreen';
+import CreateVeiculoScreen from '@/screens/CreateVeiculosScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
