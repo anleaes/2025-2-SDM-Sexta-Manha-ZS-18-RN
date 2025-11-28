@@ -14,6 +14,8 @@ import FuncionariosScreen from '@/screens/FuncionariosScreen';
 import { Funcionario } from '@/screens/FuncionariosScreen';
 import CreateFuncionarioScreen from '@/screens/CreateFuncionariosScreen';
 import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
+
+
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -27,6 +29,7 @@ export type DrawerParamList = {
   Funcionarios: undefined;
   CreateFuncionario: undefined;
   EditFuncionario: { funcionario: Funcionario };
+
 
 
 
@@ -99,7 +102,6 @@ const DrawerNavigator = () => {
         component={EditFuncionarioScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Funcionário' }}
   
-
 
         
         //adicionar drawer.screens aqui!!!
