@@ -36,7 +36,8 @@ import CreatePagamentoScreen from '@/screens/CreatePagamentosScreen';
 import EditPagamentoScreen from '@/screens/EditPagamentosScreen';
 
 import ReservasScreen, { Reserva } from '@/screens/ReservasScreen';
-import CreateReservaScreen from '@/screens/CreateReservaScreen';
+import CreateReservaScreen from '@/screens/CreateReservasScreen';
+import EditReservaScreen from '@/screens/EditReservasScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -266,6 +267,11 @@ const DrawerNavigator = () => {
         name="CreateReserva"
         component={CreateReservaScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Nova Reserva' }}
+    />
+    <Drawer.Screen
+        name="EditReserva"
+        component={EditReservaScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Reserva' }}
       />
     </Drawer.Navigator>  
   );
