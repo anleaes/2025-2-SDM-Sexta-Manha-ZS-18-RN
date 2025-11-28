@@ -29,6 +29,7 @@ import EditVagaScreen from '@/screens/EditVagasScreen';
 
 import EstacionamentosScreen, { Estacionamento } from '@/screens/EstacionamentosScreen';
 import CreateEstacionamentoScreen from '@/screens/CreateEstacionamentosScreen';
+import EditEstacionamentoScreen from '@/screens/EditEstacionamentoScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -204,12 +205,16 @@ const DrawerNavigator = () => {
     ),
     title: 'Estacionamentos',
   }}
-
     />
     <Drawer.Screen
         name="CreateEstacionamento"
         component={CreateEstacionamentoScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Estacionamento' }} 
+    />
+    <Drawer.Screen
+        name="EditEstacionamento"
+        component={EditEstacionamentoScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Estacionamento' }}
       />
     </Drawer.Navigator>  
   );
