@@ -3,11 +3,15 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 import HomeScreen from '../screens/HomeScreen';
+
 //import classes aqui!!!
 
 import ClientesScreen, { Cliente } from '@/screens/ClientesScreen';
 import CreateClienteScreen from '@/screens/CreateClientesScreen';
-//import EditClienteScreen from '@/screens/EditClienteScreen';
+import EditClienteScreen from '@/screens/EditClientesScreen';
+
+
+
 
 //import classes aqui!!!
 
@@ -19,6 +23,10 @@ export type DrawerParamList = {
   CreateCliente: undefined;
   EditCliente: { cliente: Cliente };
 
+
+
+
+  //chamar outras telas aqui!!!
 };
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
@@ -43,6 +51,7 @@ const DrawerNavigator = () => {
             drawerIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color}  />,
             title: 'Início',
         }}
+
         //adicionar drawer.screens aqui!!!
 
         />
@@ -53,14 +62,22 @@ const DrawerNavigator = () => {
             drawerIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color}  />,
             title: 'Clientes',
         }}
-              />
-      <Drawer.Screen
+        />
+    <Drawer.Screen
         name="CreateCliente"
         component={CreateClienteScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Novo cliente' }}
+    />
+    <Drawer.Screen
+        name="EditCliente"
+        component={EditClienteScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar cliente' }}
         
 
 
+
+        
+        //adicionar drawer.screens aqui!!!
       />
     </Drawer.Navigator>  
   );
