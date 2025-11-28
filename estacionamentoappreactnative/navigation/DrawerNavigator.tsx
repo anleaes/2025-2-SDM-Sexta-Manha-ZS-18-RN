@@ -15,9 +15,9 @@ import { Funcionario } from '@/screens/FuncionariosScreen';
 import CreateFuncionarioScreen from '@/screens/CreateFuncionariosScreen';
 import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
 
-import TarifaScreen, { Tarifa } from '@/screens/TarifaScreen';
-import CreateTarifaScreen from '@/screens/CreateTarifaScreen';
-import EditTarifaScreen from '@/screens/EditTarifaScreen';
+import TarifaScreen, { Tarifa } from '@/screens/TarifasScreen';
+import CreateTarifaScreen from '@/screens/CreateTarifasScreen';
+import EditTarifaScreen from '@/screens/EditTarifasScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
