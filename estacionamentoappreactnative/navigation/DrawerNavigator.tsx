@@ -36,7 +36,7 @@ import CreatePagamentoScreen from '@/screens/CreatePagamentosScreen';
 import EditPagamentoScreen from '@/screens/EditPagamentosScreen';
 
 import ReservasScreen, { Reserva } from '@/screens/ReservasScreen';
-import CreateReservaScreen from '@/screens/CreateReservaScreen';
+import CreateReservaScreen from '@/screens/CreateReservasScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
