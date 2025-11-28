@@ -23,7 +23,7 @@ import VeiculosScreen, { Veiculo } from '@/screens/VeiculosScreen';
 import CreateVeiculoScreen from '@/screens/CreateVeiculosScreen';
 import EditVeiculoScreen from '@/screens/EditVeiculosScreen';
 
-
+import VagasScreen, { Vaga } from '@/screens/VagasScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -45,6 +45,11 @@ export type DrawerParamList = {
     Veiculos: undefined;
     CreateVeiculo: undefined;
     EditVeiculo: { veiculo: Veiculo };
+
+    Vagas: undefined;
+    CreateVaga: undefined;
+    EditVaga: { vaga: Vaga };
+
 
   //chamar outras telas aqui!!!
 };
@@ -157,6 +162,17 @@ const DrawerNavigator = () => {
         name="EditVeiculo"
         component={EditVeiculoScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Veículo' }}
+
+    />
+    <Drawer.Screen
+        name="Vagas"
+        component={VagasScreen}
+        options={{
+    drawerIcon: ({ color, size }) => (
+        <Ionicons name="grid-outline" size={size} color={color} />
+    ),
+    title: 'Vagas',
+  }}
         
         //adicionar drawer.screens aqui!!!
       />
