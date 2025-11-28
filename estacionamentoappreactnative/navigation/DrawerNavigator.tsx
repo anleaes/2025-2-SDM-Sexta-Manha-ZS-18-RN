@@ -17,6 +17,7 @@ import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
 
 import TarifaScreen, { Tarifa } from '@/screens/TarifaScreen';
 import CreateTarifaScreen from '@/screens/CreateTarifaScreen';
+import EditTarifaScreen from '@/screens/EditTarifaScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -121,6 +122,11 @@ const DrawerNavigator = () => {
         name="CreateTarifa"
         component={CreateTarifaScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Nova Tarifa' }}
+    />
+    <Drawer.Screen
+        name="EditTarifa"
+        component={EditTarifaScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Tarifa' }}
         
         //adicionar drawer.screens aqui!!!
       />
