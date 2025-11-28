@@ -25,6 +25,7 @@ import EditVeiculoScreen from '@/screens/EditVeiculosScreen';
 
 import VagasScreen, { Vaga } from '@/screens/VagasScreen';
 import CreateVagaScreen from '@/screens/CreateVagasScreen';
+import EditVagaScreen from '@/screens/EditVagasScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -180,6 +181,11 @@ const DrawerNavigator = () => {
         component={CreateVagaScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Nova Vaga' }}
         
+    />
+    <Drawer.Screen
+        name="EditVaga"
+        component={EditVagaScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Vaga' }}
         //adicionar drawer.screens aqui!!!
       />
     </Drawer.Navigator>  
