@@ -6,7 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 //import classes aqui!!!
 
 import ClientesScreen, { Cliente } from '@/screens/ClientesScreen';
-//import CreateClienteScreen from '@/screens/CreateClienteScreen';
+import CreateClienteScreen from '@/screens/CreateClientesScreen';
 //import EditClienteScreen from '@/screens/EditClienteScreen';
 
 //import classes aqui!!!
@@ -53,6 +53,11 @@ const DrawerNavigator = () => {
             drawerIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color}  />,
             title: 'Clientes',
         }}
+              />
+      <Drawer.Screen
+        name="CreateCliente"
+        component={CreateClienteScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Novo cliente' }}
         
 
 
