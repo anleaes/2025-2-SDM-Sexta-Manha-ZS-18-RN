@@ -10,9 +10,7 @@ import ClientesScreen, { Cliente } from '@/screens/ClientesScreen';
 import CreateClienteScreen from '@/screens/CreateClientesScreen';
 import EditClienteScreen from '@/screens/EditClientesScreen';
 
-
-
-
+import FuncionariosScreen from '@/screens/FuncionariosScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -23,6 +21,9 @@ export type DrawerParamList = {
   CreateCliente: undefined;
   EditCliente: { cliente: Cliente };
 
+  Funcionarios: undefined;
+  CreateFuncionario: undefined;
+  EditFuncionario: { funcionario: Funcionario };
 
 
 
@@ -72,7 +73,17 @@ const DrawerNavigator = () => {
         name="EditCliente"
         component={EditClienteScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar cliente' }}
-        
+/> 
+    <Drawer.Screen
+       name="Funcionarios"
+       component={FuncionariosScreen}
+       options={{
+        drawerIcon: ({ color, size }) => (
+        <Ionicons name="people-outline" size={size} color={color} />
+    ),
+    title: 'Funcionários',
+  }}
+
 
 
 
