@@ -11,8 +11,6 @@ import CreateClienteScreen from '@/screens/CreateClientesScreen';
 import EditClienteScreen from '@/screens/EditClientesScreen';
 
 
-
-
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -22,6 +20,7 @@ export type DrawerParamList = {
   Clientes: undefined;
   CreateCliente: undefined;
   EditCliente: { cliente: Cliente };
+
 
 
 
@@ -72,7 +71,8 @@ const DrawerNavigator = () => {
         name="EditCliente"
         component={EditClienteScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar cliente' }}
-        
+
+
 
 
 
