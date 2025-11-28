@@ -15,7 +15,7 @@ import { Funcionario } from '@/screens/FuncionariosScreen';
 import CreateFuncionarioScreen from '@/screens/CreateFuncionariosScreen';
 import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
 
-
+import TarifaScreen, { Tarifa } from '@/screens/TarifaScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -30,7 +30,9 @@ export type DrawerParamList = {
   CreateFuncionario: undefined;
   EditFuncionario: { funcionario: Funcionario };
 
-
+  Tarifas: undefined;
+  CreateTarifa: undefined;
+  EditTarifa: { tarifa: Tarifa };
 
 
   //chamar outras telas aqui!!!
@@ -102,7 +104,16 @@ const DrawerNavigator = () => {
         component={EditFuncionarioScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Funcionário' }}
   
-
+    />
+    <Drawer.Screen
+        name="Tarifas"
+        component={TarifaScreen}
+        options={{
+    drawerIcon: ({ color, size }) => (
+      <Ionicons name="cash-outline" size={size} color={color} />
+    ),
+    title: 'Tarifas',
+  }}
         
         //adicionar drawer.screens aqui!!!
       />
