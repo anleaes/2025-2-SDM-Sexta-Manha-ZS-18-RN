@@ -5,6 +5,39 @@ import { DrawerParamList } from '../navigation/DrawerNavigator';
 
 type Props = DrawerScreenProps<DrawerParamList, 'CreateReserva'>;
 
+export type Pagamento = {
+  id: number;
+  valor: number;
+  metodo_pagamento: string;
+  aprovado: string;
+  data_pagamento: string;
+};
+
+export type Veiculo = {
+  id: number;
+  marca: string;
+  modelo: string;
+  placa: string;
+  cliente: number;
+};
+
+export type Vaga = {
+  id: number;
+  numero: number;
+  tipo_vaga: string;
+  localizacao: string;
+  status: boolean;
+};
+
+export type Tarifa = {
+  id: number;
+  valor_hora: number;
+  valor_diaria: number;
+  valor_mensal: number;
+  hora_entrada: string;
+};
+
+
 const CreateReservaScreen = ({ navigation }: Props) => {
   const [dataInicio, setDataInicio] = useState('');
   const [dataFim, setDataFim] = useState('');
