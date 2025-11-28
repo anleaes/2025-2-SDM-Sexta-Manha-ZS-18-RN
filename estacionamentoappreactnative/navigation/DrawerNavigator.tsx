@@ -33,6 +33,7 @@ import EditEstacionamentoScreen from '@/screens/EditEstacionamentoScreen';
 
 import PagamentosScreen, { Pagamento } from '@/screens/PagamentosScreen';
 import CreatePagamentoScreen from '@/screens/CreatePagamentosScreen';
+import EditPagamentoScreen from '@/screens/EditPagamentosScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -238,7 +239,11 @@ const DrawerNavigator = () => {
         name="CreatePagamento"
         component={CreatePagamentoScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Pagamento' }}
-
+    />
+    <Drawer.Screen
+        name="EditPagamento"
+        component={EditPagamentoScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Pagamento' }}
   
       />
     </Drawer.Navigator>  
