@@ -34,6 +34,8 @@ import EditEstacionamentoScreen from '@/screens/EditEstacionamentoScreen';
 import PagamentosScreen, { Pagamento } from '@/screens/PagamentosScreen';
 import CreatePagamentoScreen from '@/screens/CreatePagamentosScreen';
 import EditPagamentoScreen from '@/screens/EditPagamentosScreen';
+
+import ReservasScreen, { Reserva } from '@/screens/ReservasScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
@@ -67,6 +69,10 @@ export type DrawerParamList = {
     Pagamentos: undefined;
     CreatePagamento: undefined;
     EditPagamento: { pagamento: Pagamento };
+
+    Reservas: undefined;
+    CreateReserva: undefined;
+    EditReserva: { reserva: Reserva };
 
   //chamar outras telas aqui!!!
 };
@@ -245,6 +251,17 @@ const DrawerNavigator = () => {
         component={EditPagamentoScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Pagamento' }}
   
+
+    />
+    <Drawer.Screen
+        name="Reservas"
+        component={ReservasScreen}
+        options={{
+    drawerIcon: ({ color, size }) => (
+      <Ionicons name="calendar-outline" size={size} color={color} />
+    ),
+    title: 'Reservas',
+  }}
       />
     </Drawer.Navigator>  
   );
