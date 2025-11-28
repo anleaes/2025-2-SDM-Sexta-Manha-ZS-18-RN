@@ -13,9 +13,10 @@ export type Reserva = {
   data_fim: string;
   aprovado: boolean;
   valor_total: number;
-  veiculo: number; // id do veiculo
-  vaga: number; // id da vaga
-  pagamentos?: number[]; // ids dos pagamentos (opcional)
+  veiculo: number; 
+  vaga: number; 
+  pagamentos: number[]; 
+  tarifa: number; 
 };
 
 const ReservasScreen = ({ navigation }: Props) => {
@@ -23,16 +24,11 @@ const ReservasScreen = ({ navigation }: Props) => {
   const [loading, setLoading] = useState(true);
 
   const fetchReservas = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch('http://localhost:8000/reservas/');
-      const data = await response.json();
-      setReservas(data);
-    } catch (error) {
-      console.error('fetchReservas error', error);
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true);
+    const response = await fetch('http://localhost:8000/reservas/');
+    const data = await response.json();
+    setReservas(data);
+    setLoading(false);
   };
 
   useFocusEffect(
@@ -42,14 +38,10 @@ const ReservasScreen = ({ navigation }: Props) => {
   );
 
   const handleDelete = async (id: number) => {
-    try {
-      await fetch(`http://localhost:8000/reservas/${id}/`, {
-        method: 'DELETE',
-      });
-      setReservas(prev => prev.filter(r => r.id !== id));
-    } catch (error) {
-      console.error('delete reserva error', error);
-    }
+    const res = await fetch(`http://localhost:8000/reservas/${id}/`, {
+      method: 'DELETE',
+    });
+    setReservas(prev => prev.filter(r => r.id !== id));
   };
 
   const renderItem = ({ item }: { item: Reserva }) => (
@@ -104,16 +96,71 @@ const ReservasScreen = ({ navigation }: Props) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', paddingHorizontal: 16, paddingTop: 16 },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 12, color: '#333', alignSelf: 'center' },
-  card: { backgroundColor: '#f0f4ff', padding: 16, borderRadius: 10, marginBottom: 12, elevation: 2 },
-  name: { fontSize: 18, fontWeight: '600', color: '#222' },
-  description: { fontSize: 14, color: '#666', marginTop: 4 },
-  editButton: { backgroundColor: '#4B7BE5', padding: 8, borderRadius: 6, marginRight: 8 },
-  deleteButton: { backgroundColor: '#E54848', padding: 8, borderRadius: 6 },
-  editText: { color: '#fff', fontWeight: '500' },
-  fab: { position: 'absolute', right: 20, bottom: 20, backgroundColor: '#0D47A1', borderRadius: 28, padding: 14, elevation: 4 },
-  row: { flexDirection: 'row', marginTop: 10, alignSelf: 'flex-end' },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 16,
+    paddingTop: 16,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 12,
+    color: '#333',
+    alignSelf: 'center',
+  },
+  card: {
+    backgroundColor: '#f0f4ff',
+    padding: 16,
+    borderRadius: 10,
+    marginBottom: 12,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#222',
+  },
+  description: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 4,
+  },
+  editButton: {
+    backgroundColor: '#4B7BE5',
+    padding: 8,
+    borderRadius: 6,
+    marginRight: 8,
+  },
+  editText: { 
+    color: '#fff', 
+    fontWeight: '500' 
+  },
+  fab: {
+    position: 'absolute',
+    right: 20,
+    bottom: 20,
+    backgroundColor: '#0D47A1',
+    borderRadius: 28,
+    padding: 14,
+    elevation: 4,
+  },
+  deleteButton: {
+    backgroundColor: '#E54848',
+    padding: 8,
+    borderRadius: 6,
+    marginRight: 8,
+  },
+  row: { 
+    flexDirection: 'row', 
+    marginTop: 8, 
+    alignSelf: 'flex-end' 
+  },
 });
+
 
 export default ReservasScreen;
