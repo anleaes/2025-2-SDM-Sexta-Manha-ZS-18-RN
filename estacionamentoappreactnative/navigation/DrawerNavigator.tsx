@@ -18,24 +18,29 @@ import EditFuncionarioScreen from '@/screens/EditFuncionarioScreen';
 import TarifaScreen, { Tarifa } from '@/screens/TarifasScreen';
 import CreateTarifaScreen from '@/screens/CreateTarifasScreen';
 import EditTarifaScreen from '@/screens/EditTarifasScreen';
+
+import VeiculosScreen, { Veiculo } from '@/screens/VeiculosScreen';
 //import classes aqui!!!
 
 export type DrawerParamList = {
   Home: undefined;
   //chamar outras telas aqui!!!
   
-  Clientes: undefined;
-  CreateCliente: undefined;
-  EditCliente: { cliente: Cliente };
+    Clientes: undefined;
+    CreateCliente: undefined;
+    EditCliente: { cliente: Cliente };
 
-  Funcionarios: undefined;
-  CreateFuncionario: undefined;
-  EditFuncionario: { funcionario: Funcionario };
+    Funcionarios: undefined;
+    CreateFuncionario: undefined;
+    EditFuncionario: { funcionario: Funcionario };
 
-  Tarifas: undefined;
-  CreateTarifa: undefined;
-  EditTarifa: { tarifa: Tarifa };
+    Tarifas: undefined;
+    CreateTarifa: undefined;
+    EditTarifa: { tarifa: Tarifa };
 
+    Veiculos: undefined;
+    CreateVeiculo: undefined;
+    EditVeiculo: { veiculo: Veiculo };
 
   //chamar outras telas aqui!!!
 };
@@ -127,6 +132,17 @@ const DrawerNavigator = () => {
         name="EditTarifa"
         component={EditTarifaScreen}
         options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Tarifa' }}
+
+
+    />
+    <Drawer.Screen
+        name="Veiculos"
+        component={VeiculosScreen}
+        options={{
+    drawerIcon: ({ color, size }) =>
+        <Ionicons name="car-outline" size={size} color={color} />,
+        title: 'Veículos',
+    }}
         
         //adicionar drawer.screens aqui!!!
       />
