@@ -204,13 +204,12 @@ const DrawerNavigator = () => {
     ),
     title: 'Estacionamentos',
   }}
+
     />
     <Drawer.Screen
         name="CreateEstacionamento"
         component={CreateEstacionamentoScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Estacionamento' }}   
-
-        
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Novo Estacionamento' }} 
       />
     </Drawer.Navigator>  
   );
